@@ -1,0 +1,25 @@
+#handwriting td {
+  width: 54px;
+  height: 54px;
+  line-height: 40px;
+  padding-left: 0;
+  overflow-y: hidden;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+#handwriting div.char {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  height: 46px;
+  z-index:100;
+  font-family: 'STKaiti', 'Kaiti', '楷体', '楷体_GB2312';
+  font-size: 46px;
+}
+
+#handwriting img {
+  width: 54px;
+  height: 54px;
+}

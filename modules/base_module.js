@@ -7,7 +7,7 @@ let BaseModule = function(obj) {
 };
 
 BaseModule.prototype.render = function(data) {
-  let result = '<h4>' + this.desc + '</h4>' + data;
+  let result = '<h5>' + this.desc + '</h5>' + data;
   $('#' + this.name + ' div[name="result"]').html(result);
 };
 

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>寒假作业</title>
-        <link rel="stylesheet" href="lib/css/bootstrap.min.css" type="text/css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>小学生作业</title>
+        <link rel='stylesheet' href='lib/css/bootstrap.min.css' type='text/css'>
         <script type='text/javascript' src='lib/js/jquery-1.11.2.min.js'></script>
         <script type='text/javascript' src='lib/js/bootstrap.min.js'></script>
         <script type='text/javascript' src='config/config.js'></script>
@@ -12,15 +13,33 @@
             * {
                 font-size: 16px;
             }
+
+            #header {
+                text-align: center;
+            }
             
             @media print {
                 .no-print {
+                    height: 3px;
                     visibility: hidden;
                 }
+
+                #header {
+                    border: 0;
+                }
+            }
+
+            @page
+            {
+                size: auto;
+                margin: 13px auto;
             }
         </style>
     </head>
-    <body> 
+    <body>
+        <div class='container' style='text-align: center'>
+            <h4><input type='text' id='header'/></h4>
+        </div>
     </body>
 </html>
 

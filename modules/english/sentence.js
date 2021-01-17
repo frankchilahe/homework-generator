@@ -5,6 +5,7 @@ let eng_sentences = new BaseModule({
   generate: function(config, total_cnt) {
     let all_sentences = config.sentences;
     let library = new Set();
+    total_cnt = total_cnt < all_sentences.length ? total_cnt : all_sentences.length;
 
     while (library.size < total_cnt) {
       library.add(all_sentences[getRandomInt(0, all_sentences.length)]);

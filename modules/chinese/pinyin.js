@@ -5,6 +5,7 @@ let chinese_pinyin = new BaseModule({
   generate: function(config, total_cnt) {
     let all_chars = config.characters.join('');
     let library = new Set();
+    total_cnt = total_cnt < all_chars.length ? total_cnt : all_chars.length;
 
     while (library.size < total_cnt) {
       library.add(all_chars[getRandomInt(0, all_chars.length)]);

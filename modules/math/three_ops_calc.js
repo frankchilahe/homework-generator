@@ -4,7 +4,9 @@ let three_ops_calc = new BaseModule({
   default_num: 12,
   generate: function(config, total_cnt) {
     let library = new Set();
-    let max_num = config.max_num;
+    let max_num = config.max_num > 4 ? config.max_num : 4;
+    let max_possible_cnt = (max_num - 1) * (max_num - 2) * (max_num - 2);
+    total_cnt = total_cnt < max_possible_cnt ? total_cnt : max_possible_cnt;
   
     while (library.size < total_cnt) {
       let op_id = getRandomInt(0, 4);
@@ -16,7 +18,7 @@ let three_ops_calc = new BaseModule({
         formula = [num1, '+', num2, '+', num3, '=', num1 + num2 + num3];
       }
       else if (op_id === 1) {
-        let num1 = getRandomInt(max_num / 2.5, max_num);
+        let num1 = getRandomInt(3, max_num);
         let num2 = getRandomInt(1, num1 - 1);
         let num3 = getRandomInt(1, num1 - num2);
         formula = [num1, '-', num2, '-', num3, '=', num1 - num2 - num3];
@@ -28,7 +30,7 @@ let three_ops_calc = new BaseModule({
         formula = [num1, '+', num2, '-', num3, '=', num1 + num2 - num3];
       }
       else if (op_id === 3) {
-        let num1 = getRandomInt(max_num / 2.5, max_num);
+        let num1 = getRandomInt(2, max_num);
         let num2 = getRandomInt(1, num1);
         let num3 = getRandomInt(1, max_num - num1 + num2);
         formula = [num1, '-', num2, '+', num3, '=', num1 - num2 + num3];

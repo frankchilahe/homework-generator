@@ -5,6 +5,8 @@ let two_ops_calc = new BaseModule({
   generate: function(config, total_cnt) {
     let library = new Set();
     let max_num = config['max_num'];
+    let max_possible_cnt = (max_num - 1) * (max_num - 2)
+    total_cnt = total_cnt < max_possible_cnt ? total_cnt : max_possible_cnt;
 
     while (library.size < total_cnt) {
       let op_id = getRandomInt(0, 2);

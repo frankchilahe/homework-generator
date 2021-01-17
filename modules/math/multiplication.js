@@ -4,6 +4,7 @@ let multiplication = new BaseModule({
   default_num: 18,
   generate: function(config, total_cnt) {
     let library = new Set();
+    total_cnt = total_cnt < 81 ? total_cnt : 81;
 
     while (library.size < total_cnt) {
       let left = getRandomInt(1, 10);
